@@ -321,9 +321,7 @@ def run(msg):
     print(get_access_token)
     print(position)
     print("==============")
-    if get_access_token != "NO":
-        return
-    elif position:
+    if position:
         data = {
             "touser": touser,
             "toparty": toparty,
@@ -345,6 +343,7 @@ def run(msg):
         return resp
     else:
         return
+    print("========")
 
 def main_handler(event, context):
     getBeijinTime()
