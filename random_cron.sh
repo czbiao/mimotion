@@ -17,9 +17,9 @@
 # else
 #     time=$(($RANDOM%10))" 0,2,5,7,9,11,13 * * *"
 # fi
-#8, 10, 12, 14, 16, 18, 19
-if [[ ( $(date '+%H') == 08 ) || ( $(date '+%H') == 10 )  || ( $(date '+%H') == 12 )  || ( $(date '+%H') == 14 )  || ( $(date '+%H') == 16 )  || ( $(date '+%H') == 18 )  || ( $(date '+%H') == 19 ) ]] ;then
-    time=$(($RANDOM%10))" 8,10,12,14,16,18,19 * * *"
+#8, 10, 12, 14, 16, 17, 18
+if [[ ( $(date '+%H') == 08 ) || ( $(date '+%H') == 10 )  || ( $(date '+%H') == 12 )  || ( $(date '+%H') == 14 )  || ( $(date '+%H') == 16 )  || ( $(date '+%H') == 17 )  || ( $(date '+%H') == 18 ) ]] ;then
+    time=$(($RANDOM%10))" 8,10,12,14,16,17,18 * * *"
     echo 当前时间为$(date '+%H')时，计划运行时间$time
     sed -i '/cron:/d' .github/workflows/run.yml
     sed -i '/schedule/a\    - cron: '$time'' .github/workflows/run.yml
