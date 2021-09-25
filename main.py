@@ -317,6 +317,10 @@ def get_access_token():
 
 
 def run(msg):
+    print("==============")
+    print(get_access_token)
+    print(position)
+    print("==============")
     if get_access_token != "NO":
         return
     elif position:
