@@ -6,7 +6,7 @@ on:
   #pull_request:
   #  branches: [ main ]
   schedule:
-    - cron: 5 8,10,12,14,16,18,19 * * *
+    - cron: 0 8,10,12,14,16,18,19 * * *
   watch:
     types: started
   workflow_dispatch:
@@ -48,13 +48,13 @@ jobs:
           area='${{ secrets.AREA }}'
           python3 main.py ${user} ${passwd} ${skey} ${sckey} ${position} ${corpid} ${corpsecret} ${agentid} ${touser} ${toparty} ${totag} ${open_get_weather} ${area}
 
-      - name: 重置刷新时间
-        run: |
-          zsh random_cron.sh
-          git_pwd='${{ secrets.GIT_PWD }}'
-          git config --global user.name "czbiao"
-          git config --global user.email "czbiao@163.com"
-          git add .
-          git commit -m '重置下次刷新时间'
-          git remote set-url origin http://czbiao:${git_pwd}@github.com/czbiao/mimotion.git
-          git push
+      #- name: 重置刷新时间
+      #  run: |
+      #    zsh random_cron.sh
+      #    git_pwd='${{ secrets.GIT_PWD }}'
+      #    git config --global user.name "czbiao"
+      #    git config --global user.email "czbiao@163.com"
+      #    git add .
+      #    git commit -m '重置下次刷新时间'
+      #    git remote set-url origin http://czbiao:${git_pwd}@github.com/czbiao/mimotion.git
+      #    git push
