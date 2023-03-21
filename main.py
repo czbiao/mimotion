@@ -44,9 +44,9 @@ time_list = [8, 9, 10, 11, 12, 13, 17]
 set_push = [False, False, False, False, False, False, True]
 
 # 最小步数（如果只需要刷步的次数少于7次就将该次数以后的步数全都改成0，如：time_list[3]: 0，表示第五次开始不运行或者直接云函数触发里面不在该时间调用均可（建议用后者））
-min_dict = {time_list[0]: 2000, time_list[1]: 4000, time_list[2]: 6000, time_list[3]: 8000, time_list[4]: 10000, time_list[5]: 15000, time_list[6]: 20000}
+min_dict = {time_list[0]: 2000, time_list[1]: 4000, time_list[2]: 6000, time_list[3]: 8000, time_list[4]: 10000, time_list[5]: 15000, time_list[6]: 28000}
 # 最大步数（例如现在设置意思是在8点（你设置的第一个时间点默认8）运行会在1500到2999中随机生成一个数提交（开启气候降低步数会乘系数K）10点3000~4999。。。以此类推，步数范围建议看懂了再改，没看懂直接默认就好）
-max_dict = {time_list[0]: 3999, time_list[1]: 5999, time_list[2]: 7999, time_list[3]: 9999, time_list[4]: 14999, time_list[5]: 19999, time_list[6]: 35000}
+max_dict = {time_list[0]: 3999, time_list[1]: 5999, time_list[2]: 7999, time_list[3]: 9999, time_list[4]: 14999, time_list[5]: 25999, time_list[6]: 35000}
 # 设置结束
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 headers = {'User-Agent': 'MiFit/5.3.0 (iPhone; iOS 14.7.1; Scale/3.00)'}
@@ -141,8 +141,8 @@ def getBeijinTime():
         print("获取北京时间失败")
         return
     if min_1 == 0 or max_1 == 0:
-        min_1 = 18000
-        max_1 = 25000
+        min_1 = 20000
+        max_1 = 40000
     if min_1 != 0 and max_1 != 0:
         user_mi = sys.argv[1]
         # 登录密码
